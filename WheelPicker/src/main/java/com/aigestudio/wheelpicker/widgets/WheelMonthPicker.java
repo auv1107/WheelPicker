@@ -37,7 +37,7 @@ public class WheelMonthPicker extends WheelPicker implements IWheelMonthPicker {
     }
 
     private void updateSelectedYear() {
-        setSelectedItemPosition(mSelectedMonth - 1);
+        setSelectedItemPosition(mSelectedMonth - 1, false);
     }
 
     @Override

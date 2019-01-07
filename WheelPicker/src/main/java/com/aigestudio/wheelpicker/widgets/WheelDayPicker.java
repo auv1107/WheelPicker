@@ -62,7 +62,7 @@ public class WheelDayPicker extends WheelPicker implements IWheelDayPicker {
     }
 
     private void updateSelectedDay() {
-        setSelectedItemPosition(mSelectedDay - 1);
+        setSelectedItemPosition(mSelectedDay - 1, false);
     }
 
     @Override

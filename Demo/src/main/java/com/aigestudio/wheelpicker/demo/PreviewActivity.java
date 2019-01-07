@@ -1,12 +1,17 @@
 package com.aigestudio.wheelpicker.demo;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.aigestudio.wheelpicker.IWheelPicker;
 import com.aigestudio.wheelpicker.WheelPicker;
+import com.aigestudio.wheelpicker.widgets.WheelDatePicker;
+
+import java.util.Calendar;
 
 /**
  * @author AigeStudio 2015-12-06
@@ -36,6 +41,30 @@ public class PreviewActivity extends Activity implements WheelPicker.OnItemSelec
         gotoBtn = (Button) findViewById(R.id.goto_btn);
         randomlySetGotoBtnIndex();
         gotoBtn.setOnClickListener(this);
+    }
+
+    private void initPickerView(IWheelPicker picker) {
+        picker.setAtmospheric(true);
+        picker.setCurved(false);
+        picker.setCyclic(false);
+        picker.setIndicator(true);
+        picker.setIndicatorColor(Color.parseColor("#cdc1bebe"));
+        picker.setIndicatorSize(dp2px(getContext(), 1));
+        picker.setItemSpace(dp2px(getContext(), 32));
+        picker.setItemTextColor(Color.parseColor("#757575"));
+        picker.setItemTextSize(dp2px(getContext(), 18));
+        picker.setSelectedItemTextColor(Color.parseColor("#99414141"));
+        picker.setVisibleItemCount(5);
+    }
+    private void initDatePicker(WheelDatePicker datePicker) {
+        initPickerView(datePicker);
+        datePicker.getTextViewDay().setVisibility(View.GONE);
+        datePicker.getTextViewYear().setVisibility(View.GONE);
+        datePicker.getTextViewMonth().setVisibility(View.GONE);
+//        datePicker.setSelectedYear(1992);
+//        datePicker.setSelectedMonth(12);
+//        datePicker.setSelectedDay(7);
+        datePicker.setYearFrame(1900, Calendar.getInstance().get(Calendar.YEAR));
     }
 
     private void randomlySetGotoBtnIndex() {

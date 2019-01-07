@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="horizontal">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.aigestudio.wheelpicker.widgets.WheelYearPicker
         android:id="@+id/wheel_date_picker_year"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/wheel_date_picker_month"
+        app:layout_constraintHorizontal_weight="1"
+        />
 
     <TextView
         android:id="@+id/wheel_date_picker_year_tv"
@@ -21,8 +22,11 @@
 
     <com.aigestudio.wheelpicker.widgets.WheelMonthPicker
         android:id="@+id/wheel_date_picker_month"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/wheel_date_picker_year"
+        app:layout_constraintEnd_toStartOf="@id/wheel_date_picker_day"
+        app:layout_constraintHorizontal_weight="1" />
 
     <TextView
         android:id="@+id/wheel_date_picker_month_tv"
@@ -35,8 +39,11 @@
 
     <com.aigestudio.wheelpicker.widgets.WheelDayPicker
         android:id="@+id/wheel_date_picker_day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/wheel_date_picker_month"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
 
     <TextView
         android:id="@+id/wheel_date_picker_day_tv"
@@ -45,4 +52,4 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/WheelMargins"
         android:text="@string/Day" />
-</LinearLayout>
+</merge>

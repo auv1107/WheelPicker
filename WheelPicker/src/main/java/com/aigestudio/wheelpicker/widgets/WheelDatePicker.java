@@ -2,9 +2,9 @@ package com.aigestudio.wheelpicker.widgets;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.support.constraint.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.aigestudio.wheelpicker.IDebug;
@@ -18,7 +18,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-public class WheelDatePicker extends LinearLayout implements WheelPicker.OnItemSelectedListener,
+public class WheelDatePicker extends ConstraintLayout implements WheelPicker.OnItemSelectedListener,
         IDebug, IWheelPicker, IWheelDatePicker, IWheelYearPicker, IWheelMonthPicker,
         IWheelDayPicker {
     private static final SimpleDateFormat SDF =

@@ -41,7 +41,7 @@ public class WheelYearPicker extends WheelPicker implements IWheelYearPicker {
     }
 
     private void updateSelectedYear() {
-        setSelectedItemPosition(mSelectedYear - mYearStart);
+        setSelectedItemPosition(mSelectedYear - mYearStart, false);
     }
 
     @Override
